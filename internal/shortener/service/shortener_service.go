@@ -11,13 +11,14 @@ import (
 
 func GetRedirection(shortUrl string) (string, error) {
 	connection := pkg.Connection
+
 	coll := connection.Collection("redirection")
 
 	var shortener dto.Shortener
 
 	filter := bson.M{"shorten": shortUrl}
 	if err := coll.FindOne(context.TODO(), filter).Decode(&shortener); err != nil {
-		log.Fatalf("ERROR: GetRedirection fatal error: %v", err)
+		log.Printf("ERROR: GetRedirection fatal error: %v", err)
 		return "", err
 	}
 

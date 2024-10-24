@@ -25,7 +25,6 @@ func StartConnection() {
 	if err != nil {
 		log.Fatalf("ERROR MongoConnection fatal error: %v", err)
 	}
-	defer client.Disconnect(context.TODO())
 
 	Connection = client.Database(os.Getenv("MONGO_DATABASE"))
 
