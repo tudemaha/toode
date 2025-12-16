@@ -1,5 +1,6 @@
 name: Lovely Valentine CD
 
+# Build push CICD for multiplatform images
 on:
   push:
     branches: ["main"]
