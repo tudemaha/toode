@@ -1,0 +1,7 @@
+services:
+  toode:
+    restart: always
+    image: ghcr.io/tudemaha/toode:latest
+    env_file: .env
+    ports:
+      - 127.0.0.1:3000:3000
